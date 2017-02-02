@@ -1,10 +1,11 @@
 function Thermostat(){
-  this._temperature = 20;
   this._PSM = true;
+  this.STD_TEMP = 20;
   this.MIN_TEMP = 10;
   this.MAX_PSM_ON = 25;
   this.MAX_PSM_OFF = 32;
   this.MAX_TEMP = this.MAX_PSM_ON;
+  this._temperature = this.STD_TEMP;
 };
 
 Thermostat.prototype.getTemperature = function () {
@@ -40,4 +41,18 @@ Thermostat.prototype.down = function () {
     return
   }
   this._temperature -= 1;
+};
+
+Thermostat.prototype.reset = function () {
+  this._temperature = this.STD_TEMP;
+};
+
+Thermostat.prototype.energyUsage = function () {
+  if (this._temperature < 18) {
+    return 'low-usage'
+  } else if (this._temperature >= 18 && this._temperature < 25) {
+    return 'medium-usage'
+  } else {
+    return 'high-usage'
+  }
 };
