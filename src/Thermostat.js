@@ -47,6 +47,7 @@ Thermostat.prototype.down = function () {
 
 Thermostat.prototype.reset = function () {
   this._temperature = this.STD_TEMP;
+  this._PSM = true;
 };
 
 Thermostat.prototype.energyUsage = function () {

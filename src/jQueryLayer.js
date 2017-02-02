@@ -25,9 +25,19 @@ $(document).ready(function() {
     };
   });
 
+  $("#Reset").click(function() {
+    thermostat.reset();
+    updateStatus();
+    $("#PSM").text("PSM on");
+    $("#PSM").attr("class", "bg-primary");
+  });
+
   function updateStatus(){
     $("#temperature").text(thermostat.getTemperature() + "°C");
     $("#temperature").attr("class", "bg-success");
+    $("#Energy-Usage").text(thermostat.energyUsage());
+    $("#Energy-Usage").attr("class", thermostat.energyUsage());
+
   };
 
 });

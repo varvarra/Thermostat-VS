@@ -1371,6 +1371,18 @@ a.text-danger:hover,
 a.text-danger:focus {
   color: #843534;
 }
+.low-usage {
+  color: #000;
+  background-color: #0f0;
+}
+.medium-usage {
+  color: #fff;
+  background-color: #000;
+}
+.high-usage {
+  color: #fff;
+  background-color: #f00;
+}
 .bg-primary {
   color: #fff;
   background-color: #337ab7;
