@@ -29,6 +29,8 @@ Thermostat.prototype.psmOn = function () {
 Thermostat.prototype.up = function () {
   if (this._PSM === false) {
     this.MAX_TEMP = this.MAX_PSM_OFF
+  } else {
+    this.MAX_TEMP = this.MAX_PSM_ON
   };
   if (this._temperature === this.MAX_TEMP) {
     return
