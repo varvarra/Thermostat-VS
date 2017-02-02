@@ -15,14 +15,20 @@ Thermostat.prototype.isPSMon = function () {
   return this._PSM === true;
 };
 
-Thermostat.prototype.whatMaxTemp = function () {
+
+Thermostat.prototype.psmOff = function () {
+  this._PSM = false;
+};
+
+Thermostat.prototype.psmOn = function () {
+  this._PSM =true;
+};
+
+
+Thermostat.prototype.up = function () {
   if (this._PSM === false) {
     this.MAX_TEMP = this.MAX_PSM_OFF
   };
-  return
-};
-
-Thermostat.prototype.up = function () {
   if (this._temperature === this.MAX_TEMP) {
     return
   };

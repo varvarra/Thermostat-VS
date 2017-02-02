@@ -37,4 +37,12 @@ describe("Features:", function() {
     expect(thermostat.getTemperature()).toEqual(25);
   });
 
+  it('With PSM off, the maximum temperature is 32 degrees', function() {
+    thermostat.psmOff();
+    for( i = 0; i < 13; i++) {
+      thermostat.up();
+    };
+    expect(thermostat.getTemperature()).toEqual(32);
+  });
+
 });
